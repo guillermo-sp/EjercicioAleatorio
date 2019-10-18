@@ -23,6 +23,7 @@ public class EjercicioAleatorio {
         String contestacion;
         int contador = 0;
         int numAleatorio = 0;
+        int record = 9999;
         do {
                 numAleatorio=(int) (Math.random() * 20);
             do {
@@ -35,11 +36,15 @@ public class EjercicioAleatorio {
 
             } while (n1 != numAleatorio);
             System.out.println("Muy bine has acertado el numero en " + contador + " intentos");
+            if(contador<record)
+                System.out.println("Has superado el record");   
+                record = contador;
             System.out.println("Quieres volver a jugar? S o N");
 
             contestacion = teclado.next();
         } while (contestacion.toUpperCase().equals("S"));
         System.out.println("Has salido del juego");
+        
 
     }
 
